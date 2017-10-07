@@ -1,0 +1,42 @@
+*{
+	padding:0;
+	margin: 0;
+}
+.widget {
+	width:350px;
+
+}
+.widget-header{
+	margin-bottom: 20px;
+}
+.top-headerLine{
+	background-color: blue;
+	height:70px;
+	border-top-left-radius: 30px;
+}
+.bottom-headerLine{
+	background-color: lightblue;
+	height:20px;
+}
+.widgetLogo{
+	width:350px;			
+	position: absolute;
+	top: 0;
+	border: solid 1px red;
+}
+.widgetImage{
+	display: block;
+    margin: auto;
+}
+#name {
+	background-image: url(./assets/name_icon.png);
+    
+
+}
+label {
+	display:block;
+
+}
+.red {
+	color:red;
+}
