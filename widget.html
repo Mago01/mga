@@ -21,14 +21,17 @@
 			<div>
 				<h2>Please fill out the following fields to contact MGA Entertainment</h2>
 			</div> 
-			<form id="widget-form">
+			<form id="widget-form" onsubmit="return validate()" method="post" >
 				<div>
 					<label for="name">Full Name:*</label>
 					<input type="text" id="name" name="contact_name">
+					<!-- name vaidation output  -->
+					<p id="valName" class="validate"></p>
   				</div>
 				<div>
 					<label for="phone">Mobile Phone Number:*</label>
 					<input type="text" id="phone" name="phoneNumber">
+					<p id="valPhone" class="validate"></p>
   				</div>
 				<label for="state">State:*</label>
 				<select>
@@ -90,7 +93,7 @@
 					<textarea name="question"></textarea> 
 				</div>
 				<div class="button">
-					<button type="submit">Submit</button>
+					<input type="submit" value="Submit">
 					<p><span class="red">*</span>Required field</p>
 				</div>
 			</form>
@@ -109,6 +112,27 @@
 			function myBlurFunction() {
     			document.getElementById("name").style.backgroundColor = "";  
 			}
+			function validate(){
+				var y, pnum;
+				//Name validation y is the input for name
+				y=document.getElementById("name").value
+				if(y.length<1 || !isNaN(y) ){
+					document.getElementById("valName").innerHTML = "Full Name is a required field.";
+				}	
+				else{	
+					document.getElementById("valName").innerHTML = "";
+				}
+				// phone number validation pnum is the input for phone number
+				pnum=document.getElementById("phone").value
+				if(pnum.length<1 || isNaN(pnum) ){
+					document.getElementById("valPhone").innerHTML = "Mobile number is a required field.";
+				}	
+				else{	
+					document.getElementById("valPhone").innerHTML = "";
+				}
+			 return false;
+			}
+
 		</script>
 	</body>
 </html>
