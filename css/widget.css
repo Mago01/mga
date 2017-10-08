@@ -42,9 +42,10 @@ h2 {
 }
 #name, #phone {
 	background: transparent;
-	border: 0px solid;
+	border: none;
 	vertical-align: top;
-	padding-top: 8px;    
+	padding: 8px 0 10px 40px;   
+	width:205px;
 }
 .conformHide{
 	display:none;
@@ -57,19 +58,20 @@ label {
 .inputBox{
 	border: 1px solid #d5d5d5;
 	height:33px;
-	border-radius: 5px;
+	border-radius: 2px;
 
 }
 .icon{
-	padding:5px;
-	display:inline-block;
+	position: absolute;
+	top:5px;
+	left: 5px;
 }
 select{
 	background-color: transparent;
 	width:100%;
 	height:33px;
 	border: 1px solid #d5d5d5;
-	border-radius: 5px;
+	border-radius: 2px;
 }
 .validate{
 	text-align: right;
@@ -99,7 +101,10 @@ select{
 	
 	border: 1px solid #d5d5d5;
 	height:83px;
-	border-radius: 5px;
+	border-radius: 2px;
+}
+#stateBox, #wasCABox{
+	border-radius: 2px;
 }
 textarea {
 	background-color: transparent;
@@ -114,4 +119,8 @@ textarea {
 .submitBtt{
 	height: 34px;
 	width: 120px;
+}
+input:focus, textarea:focus, select:focus { 
+    background-color: lightblue !important;
+    border-radius: 2px;
 }

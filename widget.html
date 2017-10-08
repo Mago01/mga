@@ -113,6 +113,7 @@
 				</div>
 				<div>
 					<label for="question">Describe your question:*</label>
+					<div>
 					<div id=questionBox class="divPos textAreaBox">
 					<textarea id="question" name="question"></textarea> 
 					<img src="assets/warning_icon.png" class="noError erLocation" id="erQuestion">
@@ -132,17 +133,6 @@
 		</div>
 		</div>
 		<script>
-			var x = document.getElementById("widget-form");
-			x.addEventListener("focusin", myFocusFunction);
-			x.addEventListener("focusout", myBlurFunction);
-
-			function myFocusFunction() {
-    			document.getElementById("name").style.backgroundColor = "lightblue";  
-			}
-
-			function myBlurFunction() {
-    			document.getElementById("name").style.backgroundColor = "";  
-			}
 			function validate(){
 				var y, pnum, sta, caConf, desc;
 				var flag=true;
