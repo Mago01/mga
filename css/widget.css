@@ -3,6 +3,7 @@
 	margin: 0;
 }
 .widget {
+	position: relative;
 	margin:5px;
 	width:300px;
 	height: 623px;
@@ -26,7 +27,6 @@ h2 {
 	height:15px;
 }
 .widgetLogo{
-	padding-top: 5px;
 	width:300px;			
 	position: absolute;
 	top: 0;
@@ -40,9 +40,11 @@ h2 {
 	margin: 17px 28px 0 23px;
 	border:solid 1px gray;
 }
-#name {
+#name, #phone {
+	background: transparent;
 	border: 0px solid;
-    
+	vertical-align: top;
+	padding-top: 8px;    
 }
 .conformHide{
 	display:none;
@@ -52,14 +54,64 @@ label {
 	font-size: 14px;
 
 }
+.inputBox{
+	border: 1px solid #d5d5d5;
+	height:33px;
+	border-radius: 5px;
+
+}
+.icon{
+	padding:5px;
+	display:inline-block;
+}
+select{
+	background-color: transparent;
+	width:100%;
+	height:33px;
+	border: 1px solid #d5d5d5;
+	border-radius: 5px;
+}
 .validate{
 	text-align: right;
 	color:red;
 	font-size: 10px;
 }
 .red {
-	color:red;
+	background-color:#ffe3df;
+	border:1px solid red !important;
 }
 .noError {
 	display:none;
+}
+.formBox {
+	height: 68px;
+}
+.divPos{
+	position: relative;
+}
+.erLocation {
+	position: absolute;
+	top:7px;
+	right: 20px;
+	
+}
+.textAreaBox{
+	
+	border: 1px solid #d5d5d5;
+	height:83px;
+	border-radius: 5px;
+}
+textarea {
+	background-color: transparent;
+     width: 100%;
+     height: 100%;
+     border: none;
+     resize: none;
+     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+     box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.submitBtt{
+	height: 34px;
+	width: 120px;
 }
