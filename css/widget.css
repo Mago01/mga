@@ -31,11 +31,17 @@
 #name {
 	background-image: url(./assets/name_icon.png);
     
-
+}
+.conformHide{
+	display:none;
 }
 label {
 	display:block;
 
+}
+.validate{
+	color:red;
+	font-size: 10px;
 }
 .red {
 	color:red;

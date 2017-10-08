@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="css/widget.css">
-		<script src="js/widget.js">
-			
-		</script>
-
+		<link rel="stylesheet" href="css/widget.css">		
 	</head>
 	<body>
 		<div class="widget">
@@ -18,23 +14,24 @@
 				<img src="assets/mga_logo.png" class="widgetImage">
 				</div>
 			</div>
+			<div id="widgetBody">
 			<div>
 				<h2>Please fill out the following fields to contact MGA Entertainment</h2>
 			</div> 
 			<form id="widget-form" onsubmit="return validate()" method="post" >
 				<div>
 					<label for="name">Full Name:*</label>
-					<input type="text" id="name" name="contact_name">
+					<input type="text" id="name" name="contact_name" placeholder="John Doe">
 					<!-- name vaidation output  -->
 					<p id="valName" class="validate"></p>
   				</div>
 				<div>
 					<label for="phone">Mobile Phone Number:*</label>
-					<input type="text" id="phone" name="phoneNumber">
+					<input type="text" id="phone" name="phoneNumber" placeholder="ex:123-123-1234">
 					<p id="valPhone" class="validate"></p>
   				</div>
 				<label for="state">State:*</label>
-				<select>
+				<select id="state" name="state" onchange="california()">
 					<option value="none">Select one</option>
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
@@ -87,10 +84,21 @@
 					<option value="WV">West Virginia</option>
 					<option value="WI">Wisconsin</option>
 					<option value="WY">Wyoming</option>
-				</select>	
+				</select>
+				<p id="valState" class="validate"></p>	
+				<div id="onlyCA" class="conformHide">
+					<label for="wasCA">Was your item purchased in CA?:*</label>
+					<select id="wasCA" name="wasCA" >
+						<option value="none">Select one</option>
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+					<p id="valCA" class="validate"></p>
+				</div>
 				<div>
 					<label for="question">Describe your question:*</label>
-					<textarea name="question"></textarea> 
+					<textarea id="question" name="question"></textarea> 
+					<p id="valQuestion" class="validate"></p>
 				</div>
 				<div class="button">
 					<input type="submit" value="Submit">
@@ -99,6 +107,10 @@
 			</form>
 
 			</div>
+		<div id="widgetConformation" class="conformHide">
+			<h2>Thank You!</h2>
+			<h2>We have received your message and will reach out to you as soon as humanly possible</h2>
+		</div>
 		</div>
 		<script>
 			var x = document.getElementById("widget-form");
@@ -113,26 +125,74 @@
     			document.getElementById("name").style.backgroundColor = "";  
 			}
 			function validate(){
-				var y, pnum;
+				var y, pnum, sta, caConf, desc;
+				var flag=true;
 				//Name validation y is the input for name
-				y=document.getElementById("name").value
+				y=document.getElementById("name").value;
 				if(y.length<1 || !isNaN(y) ){
+					document.getElementById("name").className = "red";
 					document.getElementById("valName").innerHTML = "Full Name is a required field.";
-				}	
-				else{	
+					flag=false
+				} else{	
+					document.getElementById("name").classList.remove("red");
 					document.getElementById("valName").innerHTML = "";
 				}
 				// phone number validation pnum is the input for phone number
-				pnum=document.getElementById("phone").value
+				pnum=document.getElementById("phone").value;
 				if(pnum.length<1 || isNaN(pnum) ){
+					document.getElementById("phone").className = "red";
 					document.getElementById("valPhone").innerHTML = "Mobile number is a required field.";
-				}	
-				else{	
+					flag=false
+				} else if (pnum.length != 10){
+					document.getElementById("phone").className = "red";
+					document.getElementById("valPhone").innerHTML = "Please enter a valid phone number.";
+					flag=false
+				} else{	
+					document.getElementById("phone").classList.remove("red");
 					document.getElementById("valPhone").innerHTML = "";
+				}
+				sta=document.getElementById("state").value;
+				caConf=document.getElementById("wasCA").value;
+				if (sta=="none" ){
+					document.getElementById("state").className = "red";
+					document.getElementById("valState").innerHTML = "State is a required field.";
+					flag=false
+				} else if (sta === "CA" && caConf =="none"){
+					document.getElementById("wasCA").className = "red";
+					document.getElementById("valState").innerHTML = "";
+					document.getElementById("valCA").innerHTML = "California conformation is required field.";
+					flag=false
+				} else {
+					document.getElementById("state").classList.remove("red");
+					document.getElementById("wasCA").classList.remove("red");
+					document.getElementById("valState").innerHTML = "";
+					document.getElementById("valCA").innerHTML = "";
+				}
+				desc=document.getElementById("question").value;
+				if (desc.length<7) {
+					document.getElementById("question").className = "red";
+					document.getElementById("valQuestion").innerHTML = "Description is a required field.";
+					flag=false;
+				} else {
+					document.getElementById("question").classList.remove("red");
+					document.getElementById("valQuestion").innerHTML = "";
+				}
+				if (flag) {
+					document.getElementById("widgetBody").className = "conformHide";
+					document.getElementById("widgetConformation").classList.remove("conformHide");
 				}
 			 return false;
 			}
-
+			function california(){
+				var sta;
+				sta=document.getElementById("state").value;
+				if (sta === "CA") {
+					document.getElementById("onlyCA").classList.remove("conformHide");
+				}else{
+					document.getElementById("onlyCA").className = "conformHide";
+				}
+				return false;
+			}
 		</script>
 	</body>
 </html>
