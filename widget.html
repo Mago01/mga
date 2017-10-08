@@ -21,13 +21,21 @@
 			<form id="widget-form" onsubmit="return validate()" method="post" >
 				<div>
 					<label for="name">Full Name:*</label>
-					<input type="text" id="name" name="contact_name" placeholder="John Doe">
+					<div>
+						<img src="assets/name_icon.png">
+						<input type="text" id="name" name="contact_name" placeholder="John Doe">
+						<img src="assets/warning_icon.png" class="noError" id="erName">
+					</div>
 					<!-- name vaidation output  -->
 					<p id="valName" class="validate"></p>
   				</div>
 				<div>
 					<label for="phone">Mobile Phone Number:*</label>
-					<input type="text" id="phone" name="phoneNumber" placeholder="ex:123-123-1234">
+					<div>
+						<img src="assets/phone_icon.png">
+						<input type="text" id="phone" name="phoneNumber" placeholder="ex:123-123-1234">
+						<img src="assets/warning_icon.png" class="noError" id="erPhone">
+					</div>
 					<p id="valPhone" class="validate"></p>
   				</div>
 				<label for="state">State:*</label>
@@ -85,6 +93,7 @@
 					<option value="WI">Wisconsin</option>
 					<option value="WY">Wyoming</option>
 				</select>
+				<img src="assets/warning_icon.png" class="noError" id="erState">
 				<p id="valState" class="validate"></p>	
 				<div id="onlyCA" class="conformHide">
 					<label for="wasCA">Was your item purchased in CA?:*</label>
@@ -93,11 +102,13 @@
 						<option value="Yes">Yes</option>
 						<option value="No">No</option>
 					</select>
+					<img src="assets/warning_icon.png" class="noError" id="erCA">
 					<p id="valCA" class="validate"></p>
 				</div>
 				<div>
 					<label for="question">Describe your question:*</label>
 					<textarea id="question" name="question"></textarea> 
+					<img src="assets/warning_icon.png" class="noError" id="erQuestion">
 					<p id="valQuestion" class="validate"></p>
 				</div>
 				<div class="button">
@@ -131,50 +142,62 @@
 				y=document.getElementById("name").value;
 				if(y.length<1 || !isNaN(y) ){
 					document.getElementById("name").className = "red";
+					document.getElementById("erName").classList.remove("noError");
 					document.getElementById("valName").innerHTML = "Full Name is a required field.";
 					flag=false
 				} else{	
 					document.getElementById("name").classList.remove("red");
+					document.getElementById("erName").className = "noError";
 					document.getElementById("valName").innerHTML = "";
 				}
 				// phone number validation pnum is the input for phone number
 				pnum=document.getElementById("phone").value;
 				if(pnum.length<1 || isNaN(pnum) ){
 					document.getElementById("phone").className = "red";
+					document.getElementById("erPhone").classList.remove("noError");
 					document.getElementById("valPhone").innerHTML = "Mobile number is a required field.";
 					flag=false
 				} else if (pnum.length != 10){
 					document.getElementById("phone").className = "red";
+					document.getElementById("erPhone").classList.remove("noError");
 					document.getElementById("valPhone").innerHTML = "Please enter a valid phone number.";
 					flag=false
 				} else{	
 					document.getElementById("phone").classList.remove("red");
+					document.getElementById("erPhone").className = "noError";
 					document.getElementById("valPhone").innerHTML = "";
 				}
 				sta=document.getElementById("state").value;
 				caConf=document.getElementById("wasCA").value;
 				if (sta=="none" ){
 					document.getElementById("state").className = "red";
+					document.getElementById("erState").classList.remove("noError");
 					document.getElementById("valState").innerHTML = "State is a required field.";
 					flag=false
 				} else if (sta === "CA" && caConf =="none"){
 					document.getElementById("wasCA").className = "red";
 					document.getElementById("valState").innerHTML = "";
+					document.getElementById("erCA").classList.remove("noError");
+					document.getElementById("erState").className = "noError";
 					document.getElementById("valCA").innerHTML = "California conformation is required field.";
 					flag=false
 				} else {
 					document.getElementById("state").classList.remove("red");
 					document.getElementById("wasCA").classList.remove("red");
+					document.getElementById("erCA").className = "noError";
+					document.getElementById("erState").className = "noError";
 					document.getElementById("valState").innerHTML = "";
 					document.getElementById("valCA").innerHTML = "";
 				}
 				desc=document.getElementById("question").value;
 				if (desc.length<7) {
 					document.getElementById("question").className = "red";
+					document.getElementById("erQuestion").classList.remove("noError");
 					document.getElementById("valQuestion").innerHTML = "Description is a required field.";
 					flag=false;
 				} else {
 					document.getElementById("question").classList.remove("red");
+					document.getElementById("erQuestion").className = "noError";
 					document.getElementById("valQuestion").innerHTML = "";
 				}
 				if (flag) {

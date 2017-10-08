@@ -3,23 +3,31 @@
 	margin: 0;
 }
 .widget {
-	width:350px;
+	margin:5px;
+	width:300px;
+	height: 623px;
+	border:solid 1px gray;
 
 }
+h2 {
+	margin:0 20px;
+	font-size: 18px;
+}
 .widget-header{
-	margin-bottom: 20px;
+	margin-bottom: 45px;
 }
 .top-headerLine{
-	background-color: blue;
-	height:70px;
-	border-top-left-radius: 30px;
+	background-color: #00adef;
+	height:60px;
+	border-top-left-radius: 15px;
 }
 .bottom-headerLine{
-	background-color: lightblue;
-	height:20px;
+	background-color: #0184b8;
+	height:15px;
 }
 .widgetLogo{
-	width:350px;			
+	padding-top: 5px;
+	width:300px;			
 	position: absolute;
 	top: 0;
 	border: solid 1px red;
@@ -28,8 +36,12 @@
 	display: block;
     margin: auto;
 }
+#widget-form {
+	margin: 17px 28px 0 23px;
+	border:solid 1px gray;
+}
 #name {
-	background-image: url(./assets/name_icon.png);
+	border: 0px solid;
     
 }
 .conformHide{
@@ -37,12 +49,17 @@
 }
 label {
 	display:block;
+	font-size: 14px;
 
 }
 .validate{
+	text-align: right;
 	color:red;
 	font-size: 10px;
 }
 .red {
 	color:red;
+}
+.noError {
+	display:none;
 }
