@@ -20,7 +20,7 @@
 				<h2>Please fill out the following fields to contact MGA Entertainment</h2>
 			</div> 
 			<form id="widget-form" onsubmit="return validate()" method="post" >
-				<div class="formBox">
+				<div class="formBoxName">
 					<label for="name">Full Name:*</label>
 					<div id="nameBox" class="inputBox divPos">
 						<img src="assets/name_icon.png" class="icon">
@@ -30,7 +30,7 @@
 					<!-- name vaidation output  -->
 					<p id="valName" class="validate"></p> <!--
   				--> </div>
-				<div class="formBox">
+				<div class="formBoxPhone">
 					<label for="phone">Mobile Phone Number:*</label>
 					<div id="phoneBox" class="inputBox divPos">
 						<img src="assets/phone_icon.png" class="icon">
@@ -39,7 +39,7 @@
 					</div>
 					<p id="valPhone" class="validate"></p><!--
   				--></div>
-				<div class="formBox">
+				<div id="fbs" class="formBoxState">
 				<label for="state">State:*</label>
 				<div id="stateBox" class="divPos">
 				<select id="state" name="state" onchange="california()">
@@ -100,7 +100,7 @@
 			</div>
 				<p id="valState" class="validate"></p>	
 			</div>
-				<div id="onlyCA" class="conformHide formBox">
+				<div id="onlyCA" class="conformHide formBoxCA">
 					<label for="wasCA">Was your item purchased in CA?:*</label>
 					<div id="wasCABox" class="divPos">
 					<select id="wasCA" name="wasCA" >
@@ -112,9 +112,8 @@
 				</div>
 					<p id="valCA" class="validate"></p>
 				</div>
-				<div>
+				<div id="fba" class="formBoxArea">
 					<label for="question">Describe your question:*</label>
-					<div id="fba" class="formBoxArea">
 					<div id="questionBox" class="divPos textAreaBox">
 					<textarea id="question" name="question"></textarea> 
 					<img src="assets/warning_icon.png" class="noError erLocation" id="erQuestion">
@@ -211,10 +210,14 @@
 				sta=document.getElementById("state").value;
 				if (sta === "CA") {
 					document.getElementById("onlyCA").classList.remove("conformHide");
+					document.getElementById("fbs").classList.remove("formBoxState");
+					document.getElementById("fbs").classList.add("formBoxStateCA");
 					document.getElementById("fba").classList.add("formBoxAreaCA");
 					document.getElementById("questionBox").classList.add("questionBoxCA");
 				}else{
 					document.getElementById("onlyCA").className = "conformHide";
+					document.getElementById("fbs").classList.add("formBoxState");
+					document.getElementById("fbs").classList.remove("formBoxStateCA");
 					document.getElementById("fba").classList.remove("formBoxAreaCA");
 					document.getElementById("questionBox").classList.remove("questionBoxCA");
 				}

@@ -40,13 +40,12 @@ h2 {
 }
 #widgetBody {
 	padding-top: 45px;
-	border: 1px solid gray;
+	border: 1px solid lightgray;
 	border-radius: 2px;
-	height: 548px;
+	height: 504px;
 }
 #widget-form {
 	margin: 17px 28px 0 23px;
-	border:solid 1px gray;
 }
 #name, #phone {
 	background: transparent;
@@ -61,7 +60,7 @@ h2 {
 label {
 	display:block;
 	font-size: 13px;
-	padding-bottom: 
+	padding-bottom: 3px;
 
 }
 .inputBox{
@@ -92,7 +91,16 @@ select{
 .noError {
 	display:none;
 }
-.formBox {
+.formBoxName {
+	height: 81px;
+}
+.formBoxPhone {
+	height: 78px;
+}
+.formBoxState {
+	height: 80px;
+}
+.formBoxCA {
 	height: 68px;
 }
 .divPos{
@@ -102,11 +110,10 @@ select{
 	position: absolute;
 	top:7px;
 	right: 20px;
-	
 }
 .textAreaBox{
 	border: 1px solid #d5d5d5;
-	height:108px;
+	height:84px;
 }
 textarea {
 	background-color: transparent;
@@ -139,20 +146,23 @@ input:focus, textarea:focus, select:focus {
     border-radius: 2px;
 }
 .formBoxArea{
-	height:143px;
+	height:137px;
 }
 .formBoxAreaCA {
-	height: 75px;
+	height: 88px;
 }
 .questionBoxCA{
-	height:40px;
+	height:43px;
 }
 .required {
+	padding-top: 5px;
 	font-size: 11px !important;
 }
 .requiAsc{
-	padding-top: 5px;
 	color:red;
+}
+.formBoxStateCA {
+	height: 66px;
 }
 .submitBtt, #stateBox, #wasCABox,.textAreaBox, select, .inputBox {
 	border-radius: 3px;
