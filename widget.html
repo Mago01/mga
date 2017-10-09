@@ -13,6 +13,7 @@
 				<div class="widgetLogo">
 				<img src="assets/mga_logo.png" class="widgetImage">
 				</div>
+				<h3 class="cancel">&#x2716;</h3>
 			</div>
 			<div id="widgetBody">
 			<div>
@@ -113,8 +114,8 @@
 				</div>
 				<div>
 					<label for="question">Describe your question:*</label>
-					<div>
-					<div id=questionBox class="divPos textAreaBox">
+					<div id="fba" class="formBoxArea">
+					<div id="questionBox" class="divPos textAreaBox">
 					<textarea id="question" name="question"></textarea> 
 					<img src="assets/warning_icon.png" class="noError erLocation" id="erQuestion">
 					</div>
@@ -122,7 +123,7 @@
 				</div>
 				<div class="button">
 					<input type="submit" value="Submit" class="submitBtt">
-					<p><span class="validate">*</span>Required field</p>
+					<p class="required"><span class="requiAsc">*</span>Required field</p>
 				</div>
 			</form>
 
@@ -210,8 +211,12 @@
 				sta=document.getElementById("state").value;
 				if (sta === "CA") {
 					document.getElementById("onlyCA").classList.remove("conformHide");
+					document.getElementById("fba").classList.add("formBoxAreaCA");
+					document.getElementById("questionBox").classList.add("questionBoxCA");
 				}else{
 					document.getElementById("onlyCA").className = "conformHide";
+					document.getElementById("fba").classList.remove("formBoxAreaCA");
+					document.getElementById("questionBox").classList.remove("questionBoxCA");
 				}
 				return false;
 			}

@@ -3,19 +3,16 @@
 	margin: 0;
 }
 .widget {
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
 	position: relative;
 	margin:5px;
 	width:300px;
 	height: 623px;
-	border:solid 1px gray;
 
 }
 h2 {
 	margin:0 20px;
-	font-size: 18px;
-}
-.widget-header{
-	margin-bottom: 45px;
+	font-size: 16px;
 }
 .top-headerLine{
 	background-color: #00adef;
@@ -30,11 +27,22 @@ h2 {
 	width:300px;			
 	position: absolute;
 	top: 0;
-	border: solid 1px red;
+}
+.cancel{
+	position:absolute;
+	top:2px;
+	right:7px;
+	color:white;
 }
 .widgetImage{
 	display: block;
     margin: auto;
+}
+#widgetBody {
+	padding-top: 45px;
+	border: 1px solid gray;
+	border-radius: 2px;
+	height: 548px;
 }
 #widget-form {
 	margin: 17px 28px 0 23px;
@@ -52,13 +60,13 @@ h2 {
 }
 label {
 	display:block;
-	font-size: 14px;
+	font-size: 13px;
+	padding-bottom: 
 
 }
 .inputBox{
 	border: 1px solid #d5d5d5;
 	height:33px;
-	border-radius: 2px;
 
 }
 .icon{
@@ -71,7 +79,6 @@ select{
 	width:100%;
 	height:33px;
 	border: 1px solid #d5d5d5;
-	border-radius: 2px;
 }
 .validate{
 	text-align: right;
@@ -98,13 +105,8 @@ select{
 	
 }
 .textAreaBox{
-	
 	border: 1px solid #d5d5d5;
-	height:83px;
-	border-radius: 2px;
-}
-#stateBox, #wasCABox{
-	border-radius: 2px;
+	height:108px;
 }
 textarea {
 	background-color: transparent;
@@ -116,11 +118,42 @@ textarea {
      -moz-box-sizing: border-box;    /* Firefox, other Gecko */
      box-sizing: border-box;         /* Opera/IE 8+ */
 }
+.button{
+	text-align: right;
+}
 .submitBtt{
+	color:white;
+	font-size: 18px;
+	font-weight: bold;
 	height: 34px;
 	width: 120px;
+	border:none;
+	background: -webkit-linear-gradient(#4ac4f5,#067fac); /* Safari 5.1-6.0 */
+    background: -o-linear-gradient(#4ac4f5,#067fac); /* Opera 11.1-12.0 */ 
+    background: -moz-linear-gradient(#4ac4f5,#067fac); /* Firefox 3.6-15 */
+    background: linear-gradient(#4ac4f5,#067fac); /* Standard syntax */
+
 }
 input:focus, textarea:focus, select:focus { 
     background-color: lightblue !important;
     border-radius: 2px;
+}
+.formBoxArea{
+	height:143px;
+}
+.formBoxAreaCA {
+	height: 75px;
+}
+.questionBoxCA{
+	height:40px;
+}
+.required {
+	font-size: 11px !important;
+}
+.requiAsc{
+	padding-top: 5px;
+	color:red;
+}
+.submitBtt, #stateBox, #wasCABox,.textAreaBox, select, .inputBox {
+	border-radius: 3px;
 }
