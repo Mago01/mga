@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="css/widget.css">		
+				
 	</head>
 	<body>
 		<div class="widget">
@@ -11,7 +11,7 @@
 				<div class="bottom-headerLine">
 				</div>
 				<div class="widgetLogo">
-				<img src="assets/mga_logo.png" class="widgetImage">
+				<img src="assets/mga_logo.png" class="widgetImage" alt="mag logo">
 				</div>
 				<h3 class="cancel">&#x2716;</h3>
 			</div>
@@ -23,9 +23,9 @@
 				<div class="formBoxName">
 					<label for="name">Full Name:*</label>
 					<div id="nameBox" class="inputBox divPos">
-						<img src="assets/name_icon.png" class="icon">
+						<img src="assets/name_icon.png" class="icon" alt="circle with person's head">
 						<input type="text" id="name" name="contact_name" placeholder="John Doe">
-						<img src="assets/warning_icon.png" class="noError erLocation" id="erName">
+						<img src="assets/warning_icon.png" class="noError erLocation" id="erName" alt="warning icon, exclamation point in red triangle">
 					</div>
 					<!-- name vaidation output  -->
 					<p id="valName" class="validate"></p> <!--
@@ -33,9 +33,9 @@
 				<div class="formBoxPhone">
 					<label for="phone">Mobile Phone Number:*</label>
 					<div id="phoneBox" class="inputBox divPos">
-						<img src="assets/phone_icon.png" class="icon">
+						<img src="assets/phone_icon.png" class="icon" alt="phone icon">
 						<input type="text" id="phone" name="phoneNumber" placeholder="ex:123-123-1234">
-						<img src="assets/warning_icon.png" class="noError erLocation" id="erPhone">
+						<img src="assets/warning_icon.png" class="noError erLocation" id="erPhone" alt="warning icon, exclamation point in red triangle">
 					</div>
 					<p id="valPhone" class="validate"></p><!--
   				--></div>
@@ -98,7 +98,7 @@
 				</select>
 				<p class="selectUp">&#9650;</p>
 				<p class="selectDown">&#9660;</p>
-				<img src="assets/warning_icon.png" class="noError erLocation" id="erState">
+				<img src="assets/warning_icon.png" class="noError erLocation" id="erState" alt="warning icon, exclamation point in red triangle">
 			</div>
 				<p id="valState" class="validate"></p>	
 			</div>
@@ -112,7 +112,7 @@
 					</select>
 					<p class="selectUp">&#9650;</p>
 					<p class="selectDown">&#9660;</p>
-					<img src="assets/warning_icon.png" class="noError erLocation" id="erCA">
+					<img src="assets/warning_icon.png" class="noError erLocation" id="erCA" alt="warning icon, exclamation point in red triangle">
 				</div>
 					<p id="valCA" class="validate"></p>
 				</div>
@@ -120,7 +120,7 @@
 					<label for="question">Describe your question:*</label>
 					<div id="questionBox" class="divPos textAreaBox">
 					<textarea id="question" name="question"></textarea> 
-					<img src="assets/warning_icon.png" class="noError erLocation" id="erQuestion">
+					<img src="assets/warning_icon.png" class="noError erLocation" id="erQuestion" alt="warning icon, exclamation point in red triangle">
 					</div>
 					<p id="valQuestion" class="validate"></p>
 				</div>
@@ -228,5 +228,194 @@
 				return false;
 			}
 		</script>
+		<style type="text/css">
+		*{
+		padding:0;
+		margin: 0;
+		}
+.widget {
+		
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+	position: relative;
+	margin:5px;
+	width:300px;
+	height: 623px;
+
+}
+h2 {
+	margin:0 20px;
+	font-size: 16px;
+}
+.top-headerLine{
+	background-color: #00adef;
+	height:60px;
+	border-top-left-radius: 15px;
+}
+.bottom-headerLine{
+	background-color: #0184b8;
+	height:15px;
+}
+.widgetLogo{
+	width:300px;			
+	position: absolute;
+	top: 0;
+}
+.cancel{
+	position:absolute;
+	top:2px;
+	right:7px;
+	color:white;
+}
+.widgetImage{
+	display: block;
+    margin: auto;
+}
+#widgetBody {
+	padding-top: 45px;
+	border: 1px solid lightgray;
+	border-radius: 2px;
+	height: 504px;
+}
+#widget-form {
+	margin: 17px 28px 0 23px;
+}
+#name, #phone {
+	background: transparent;
+	border: none;
+	vertical-align: top;
+	padding: 8px 0 10px 40px;   
+	width:205px;
+}
+.conformHide{
+	display:none;
+}
+label {
+	display:block;
+	font-size: 13px;
+	padding-bottom: 3px;
+
+}
+.inputBox{
+	border: 1px solid #d5d5d5;
+	height:33px;
+
+}
+.icon{
+	position: absolute;
+	top:5px;
+	left: 5px;
+}
+select{
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	background-color: transparent;
+	width:100%;
+	height:33px;
+	padding-left:5px;
+	border: 1px solid #d5d5d5;
+}
+.validate{
+	text-align: right;
+	color:red;
+	font-size: 10px;
+}
+.red {
+	background-color:#ffe3df;
+	border:1px solid red !important;
+}
+.noError {
+	display:none;
+}
+.formBoxName {
+	height: 81px;
+}
+.formBoxPhone {
+	height: 78px;
+}
+.formBoxState {
+	height: 80px;
+}
+.formBoxCA {
+	height: 68px;
+}
+.selectUp, .selectDown{
+	position: absolute;
+	font-size: 9px;
+	pointer-events: none;
+
+}
+.selectUp{
+	top:6px;
+	right:6px;
+}
+.selectDown{
+	top:16px;
+	right:6px;
+}
+.divPos{
+	position: relative;
+}
+.erLocation {
+	position: absolute;
+	top:7px;
+	right: 20px;
+}
+.textAreaBox{
+	border: 1px solid #d5d5d5;
+	height:84px;
+}
+textarea {
+	background-color: transparent;
+     width: 100%;
+     height: 100%;
+     border: none;
+     resize: none;
+     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+     box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.button{
+	text-align: right;
+}
+.submitBtt{
+	color:white;
+	font-size: 18px;
+	font-weight: bold;
+	height: 34px;
+	width: 120px;
+	border:none;
+	background: -webkit-linear-gradient(#4ac4f5,#067fac); /* Safari 5.1-6.0 */
+    background: -o-linear-gradient(#4ac4f5,#067fac); /* Opera 11.1-12.0 */ 
+    background: -moz-linear-gradient(#4ac4f5,#067fac); /* Firefox 3.6-15 */
+    background: linear-gradient(#4ac4f5,#067fac); /* Standard syntax */
+
+}
+input:focus, textarea:focus, select:focus { 
+    background-color: #e3f7fe;
+    border-radius: 2px;
+}
+.formBoxArea{
+	height:137px;
+}
+.formBoxAreaCA {
+	height: 88px;
+}
+.questionBoxCA{
+	height:43px;
+}
+.required {
+	padding-top: 5px;
+	font-size: 11px !important;
+}
+.requiAsc{
+	color:red;
+}
+.formBoxStateCA {
+	height: 66px;
+}
+.submitBtt, #stateBox, #wasCABox,.textAreaBox, select, .inputBox {
+	border-radius: 3px;
+}
+		</style>
 	</body>
 </html>
